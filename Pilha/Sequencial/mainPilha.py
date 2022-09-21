@@ -19,8 +19,6 @@ print()
 while(not pilha.estaVazia()):
     print(pilha.desempilha(),end='')
 
-
-
 try:
     print
     print(pilha.busca(90))

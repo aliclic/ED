@@ -44,7 +44,7 @@ class Pilha:
     def __str__(self):
         s = ''
         for e in self.__dados:
-            s+=f'{e} '
+            s += f'{e} '
         return s
 
     def esvazia(self):
