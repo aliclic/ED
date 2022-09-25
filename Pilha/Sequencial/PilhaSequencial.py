@@ -41,6 +41,7 @@ class Pilha:
             raise PilhaException(f'Pilha vazia.')
         return self.__dados.pop()
 
+            
     def __str__(self):
         s = ''
         for e in self.__dados:
@@ -49,8 +50,12 @@ class Pilha:
 
     def esvazia(self):
         self.__dados.clear()
-
-
-
-
-
+    
+    def concatena(self, outraPilha:'Pilha'):
+        #Inverter a pilha "outraPilha"
+        paux = Pilha()
+        while(not outraPilha.estaVazia()):
+            paux.empilha( outraPilha.desempilha())
+        # descarregando paux na pilha que recebeu a chamada
+        while(not paux.estaVazia()):
+            self.empilha( paux.desempilha())

@@ -21,6 +21,9 @@ print(pilha.desempilha())
 print(f'Pilha : {pilha}')
 
 
+pilha.esvazia()
+print(pilha.estaVazia())
+print(f'Pilha: {pilha}')
 '''
 
 TESTES DO PROF ALEX

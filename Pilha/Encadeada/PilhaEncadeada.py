@@ -65,7 +65,7 @@ class Pilha:
         atual = self.__topo
         while atual != None:
             if atual.conteudo == conteudo:
-                return self.__tamanho - cont
+                return self.__tamanho - cont # 30 - 3  = 27
             atual = atual.prox
             cont += 1
         raise  PilhaException(f'Valor {conteudo} não está na pilha')
@@ -94,9 +94,9 @@ class Pilha:
     def desempilha(self)->any:
         # Desempilha o nó topo atual
         if self.estaVazia():
-            raise PilhaException(f'Pilha vazia.')
-        topo = self.__topo.conteudo
-        self.__topo = self.__topo.prox  
+            raise PilhaException(f'Pilha vazia!!!.')
+        topo = self.__topo
+        self.__topo = self.__topo.prox
         self.__tamanho -= 1
         return topo
 
@@ -112,7 +112,6 @@ class Pilha:
     def esvazia(self):
         self.__topo = None
         self.__tamanho = 0
-
         '''
             ~ SOLUÇÕES PARA LÍNGUAS ALÉM DE PYTHON ~
         1.
@@ -126,3 +125,11 @@ class Pilha:
         except:
             pass
         '''
+    def concatena(self, outraPilha:'Pilha'):
+        #Inverter a pilha "outraPilha"
+        paux = Pilha()
+        while(not outraPilha.estaVazia()):
+            paux.empilha( outraPilha.desempilha())
+        # descarregando paux na pilha que recebeu a chamada
+        while(not paux.estaVazia()):
+            self.empilha( paux.desempilha())

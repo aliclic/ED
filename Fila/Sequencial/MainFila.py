@@ -21,6 +21,9 @@ try:
     print('Elemento 10:', fila.elemento(10))
     print()
 
+    print(fila.desenfileira())
+    print(fila)
+
     fila.esvazia()
     print(fila)
     print('Tamanho: ', len(fila))
