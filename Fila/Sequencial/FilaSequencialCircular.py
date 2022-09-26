@@ -20,7 +20,7 @@ class Fila:
         return self.__ocupados
 
     def __len__(self)->int:
-        return self.__ocupados
+        return self.__ocupados 
 
     def elemento(self, posicao:int)->any:
         try:
