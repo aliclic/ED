@@ -1,33 +1,31 @@
 from FilaSequencialCircular import *
 
+fila = Fila()
 
-fila = Fila(10)
-# teste do vazia
-if fila.estaVazia():
-    print('Fila está vazia')
-# tesde do cheia
-if fila.estaCheia():
-    print('Fila está cheia')
-# tamanho da fila 
-print('Tamanho: ', len(fila))
-# consultando por elemento
-try:
-    for i in range(10):
-        fila.enfileira(f'aluno{i+1}')
+fila.enfileira('Alic')
+fila.enfileira('Victor')
+fila.enfileira(42)
+fila.enfileira(10)
+fila.enfileira(True)
+fila.enfileira(52.2)
+fila.enfileira(False)
+fila.enfileira('Gabriel')
+fila.enfileira(89)
+fila.enfileira(100)
 
-    print(fila)
+print(fila)
 
-    print("Busca (aluno5):", fila.busca('aluno5'))
-    print('Elemento 10:', fila.elemento(10))
-    print()
+print(fila.desenfileira())
 
-    print(fila.desenfileira())
-    print(fila)
+print(fila)
 
-    fila.esvazia()
-    print(fila)
-    print('Tamanho: ', len(fila))
+print(fila.elemento(1))
 
+print(fila.busca('Victor'))
 
-except FilaException as fe:
-    print(fe)
+fila.modificar(2, 70)
+
+print(fila)
+
+fila.esvazia()
+print(fila)

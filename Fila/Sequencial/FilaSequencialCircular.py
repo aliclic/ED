@@ -46,6 +46,17 @@ class Fila:
 
         raise FilaException(f'A chave {chave} não está na Fila.')
 
+    def modificar(self, posicao:int, valor:any):
+        try:
+            assert posicao > 0 and posicao <= self.__ocupados
+            inicio = self.__frente
+            for i in range(posicao-1):                   # posicao 10
+                                                             
+                inicio = (inicio + 1) % self.__tamanho   # frente = (10+1) % 10 = 1
+
+            self.__dados[inicio] = valor
+        except AssertionError:
+            raise FilaException(f'Posicao inválida para a fila atual com {self.__ocupados} elementos')
 
     def enfileira(self, conteudo:any):
         if self.estaCheia():
@@ -71,7 +82,7 @@ class Fila:
         inicio = self.__frente
         for i in range(self.__ocupados):
             s += f'{self.__dados[inicio]} '
-            inicio = (inicio + 1) % self.__ocupados
+            inicio = (inicio + 1) % self.__tamanho
 
         s += ']'
         return s

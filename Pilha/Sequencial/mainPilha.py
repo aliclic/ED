@@ -5,6 +5,7 @@ numeros2 = [58, 59, 60]
 pilha = Pilha()
 pilha2 = Pilha()
 
+
 for n in numeros:
     pilha.empilha(n)
 

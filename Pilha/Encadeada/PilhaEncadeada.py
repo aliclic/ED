@@ -1,15 +1,15 @@
-class PilhaException(Exception):
-    def __init__(self, msg):
-        super().__init__(msg)
-
-
-class No:
-    def __init__(self, conteudo: any):
-        self.conteudo = conteudo
-        self.prox = None
-
-    def __str__(self):
-        return str(self.conteudo)
+class PilhaException(Exception): 
+    def __init__(self, msg): 
+        super().__init__(msg) 
+ 
+ 
+class No: 
+    def __init__(self, conteudo: any): 
+        self.conteudo = conteudo 
+        self.prox = None 
+ 
+    def __str__(self): 
+        return str(self.conteudo) 
 
 
 class Pilha:
@@ -115,8 +115,8 @@ class Pilha:
         '''
             ~ SOLUÇÕES PARA LÍNGUAS ALÉM DE PYTHON ~
         1.
-        while not self.estaVazia():
-            self.desempilha()
+      *  while not self.estaVazia():
+            self.desempilha()  *
 
         2.
         try:
