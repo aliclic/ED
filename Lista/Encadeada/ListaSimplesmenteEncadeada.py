@@ -9,7 +9,7 @@ class ListaException(Exception):
 
 
 class No:
-    def __init__(self, carga: any):
+    def __init__(self, carga:any):
         self.carga = carga
         self.prox = None
 
@@ -37,10 +37,10 @@ class Lista:
         '''
         try:
             assert posicao > 0 and posicao <= self.__tamanho
-            cont = 1
-            cursor = self.__start
-            while( cont < posicao):
-                cursor = cursor.prox
+            cont = 1                              # posicao = 3
+            cursor = self.__start                 # 1 < 3 ? sim, entao cursor = cursor.prox e cont +=1
+            while( cont < posicao):               # 2 < 3 ? sim, entao cursor = cursor.prox e cont +=1
+                cursor = cursor.prox              # 3 < 3 ? nao, entao retorne cursor.carga   // carga do nó atual (cursor)
                 cont += 1
 
             return cursor.carga
@@ -49,8 +49,8 @@ class Lista:
     
     def busca(self, conteudo:any)->int:
         cursor = self.__start
-        cont = 1
-        while(cursor != None):
+        cont = 1   # cont faz o papel do indice q será retornado
+        while(cursor != None):     # faz uma varredura na lista, se encontrar uma primeira ocorrência de "conteudo" ele retorna
             if cursor.carga == conteudo:
                 return  cont
             cont += 1
@@ -60,9 +60,9 @@ class Lista:
     def modificar(self, posicao:int, conteudo: any):
         try:
             assert posicao > 0 and posicao <= self.__tamanho
-            cont = 1
-            cursor = self.__start
-            while( cont < posicao):
+            cont = 1                     # posicao = 2
+            cursor = self.__start        # 1 < 2 ? sim, entao cursor = cursor.prox e cont += 1
+            while( cont < posicao):      # 2 < 2 ? nao, entao altero o conteudo nessa posicao (cursor.carga = counteudo)
                 cursor = cursor.prox
                 cont += 1
 

@@ -2,6 +2,7 @@ from ListaSimplesmenteEncadeada import *
 
 l1 = Lista()
 print(l1)
+print(l1.estaVazia())
 print('Tamanho: ', len(l1))
 
 
