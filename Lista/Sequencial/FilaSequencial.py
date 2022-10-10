@@ -37,7 +37,7 @@ class Lista:
 
 
 
-    def estaVazia(self):
+    def estaVazia(self)->bool:
         """ Método que verifica se a lista está vazia ou não
 
         Returns:
@@ -49,9 +49,9 @@ class Lista:
             if(lst.estaVazia()): #
                # instrucoes
         """
-        return True if len(self.__dado)==0 else False
+        return len(self.__dado) == 0
 
-    def tamanho(self):
+    def tamanho(self)->int:
         """ Método que consulta a quantidade de elementos existentes na lista
 
         Returns:
@@ -65,7 +65,7 @@ class Lista:
         return len(self.__dado)
 
 
-    def elemento(self, posicao):
+    def elemento(self, posicao:int)->any:
         """ Método que recupera o valor armazenado em um determinado elemento da lista
 
         Args:
@@ -99,7 +99,7 @@ class Lista:
         except:
             raise
 
-    def modificar(self, posicao, valor):
+    def modificar(self, posicao:int, valor:any):
         """ Método que altera o conteúdo armazenado em um elemento específico da lista
 
         Args:
@@ -133,7 +133,7 @@ class Lista:
             raise
 
     
-    def busca(self, valor):
+    def busca(self, valor:any)->int:
         """ Método que recupera a posicao ordenada, dentro da lista, em que se
             encontra um valor passado como argumento. No caso de haver mais de uma
             ocorrência do valor, a primeira ocorrência será levada em conta
@@ -161,7 +161,7 @@ class Lista:
         except:
             raise
 
-    def inserir(self, posicao, valor ):
+    def inserir(self, posicao:int, valor:any):
         """ Método que adiciona um novo valor à lista
 
         Args:
@@ -196,7 +196,7 @@ class Lista:
         except:
             raise
 
-    def remover(self, posicao):
+    def remover(self, posicao:int)->any:
         """ Método que remove um elemento da lista e devolve o conteudo
             existente na ordem indicada.
 
@@ -222,7 +222,7 @@ class Lista:
         """
         try:
             assert posicao > 0
-            if (len(self.__dado)==0):
+            if self.estaVazia():
                 raise PosicaoInvalidaException(f'A lista está vazia! Não é possivel remover elementos')
             valor = self.__dado[posicao-1]
             del self.__dado[posicao-1]
@@ -258,6 +258,11 @@ class Lista:
 lst = Lista()
 try:
     lst.remover(1)
+    lst.inserir(1,'primeiro')
+    lst.elemento(1)
+    lst.modificar(1,'1º')
+    lst.busca('1º')
+    print(lst)
     # print(lst.elemento(-8))
     #print(lst.elemento(10))
     #print(lst.elemento('a'))
