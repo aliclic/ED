@@ -1,13 +1,13 @@
 # Faça uma função recursiva chamada printInverse() que imprima uma string ao contrário
 
-def invertString(str)->str:
+def printInverse(str)->str:
   if str == '':
     return
   else:
-    invertString(str[1:])
+    printInverse(str[1:])
     print(str[0], end='')
 
-invertString('cila')
+printInverse('cila')
 
 
 
