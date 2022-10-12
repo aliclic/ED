@@ -1,24 +1,18 @@
 # Faça uma função recursiva chamada invertString() que retorne a sequência de caracteres de uma string passada como argumento na ordem inversa
 
-def invertString(str)->str:
-  if str == '':
-    return
+def invertString(str):
+  if str == "":
+    return str
   else:
-    invertString(str[1:])
-    print(str[0], end='')
+    return invertString(str[1:]) + str[0]
 
-invertString('cila')
+'''
+str         return
+'ifpb'      invertString('ifpb'[1:]) + 'i' => 'bpf' + 'i' = 'bpfi'
+'fpb'       invertString('fpb'[1:]) + 'f'  => 'bp' + 'f' = 'bpf'
+'pb'        invertString('pb'[1:]) + 'p'   => 'b' + 'p' = 'bp'
+'b'         invertString('b'[1:]) + 'b'    => '' + 'b' = 'b' 
+''          '' ^
+'''
 
-
-
-
-"""
-def invertString2(str)->str:
-  if str == '':
-    return
-  else:
-    print(str[-1], end='')
-    return invertString2(str[:-1])
-print()
-invertString2('alic')
-"""
+print(invertString('ifpb'))
