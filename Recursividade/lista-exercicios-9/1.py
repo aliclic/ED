@@ -1,10 +1,9 @@
 # Faça uma função recursiva chamada recursiveLength() que retorne a quantidade de caracteres de um string.
 
 def recursiveLength(str)->int:
-  if len(str) == 0:
+  if str == '':
     return 0
-  else:
-    return 1 + recursiveLength(str[1:])
+  return 1 + recursiveLength(str[1:])
 
 '''
 str             return
