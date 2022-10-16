@@ -6,6 +6,7 @@
 def meiaVidaInvictus( massa ):
   if massa < 0.8:
     return 0
+  print('Massa atual: ', massa)
   return 50 + meiaVidaInvictus(massa / 2)
 
 '''
