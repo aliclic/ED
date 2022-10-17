@@ -55,5 +55,7 @@ emordem(raiz)  # em Ordem
 print()
 posordem(raiz) # em Pós Ordem
 
+print(busca(22, raiz))
+
 
 
