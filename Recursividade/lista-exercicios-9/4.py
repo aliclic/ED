@@ -9,6 +9,15 @@ def printInverse(str)->str:
 
 printInverse('cila')
 
+'''
+str           return                            print
+'cila'        printInverse('cila'[1:])          'alic'
+'ila'         printInverse('ila'[1:])           'ali'     ↑
+'la'          printInverse('la'[1:])            'al'      ↑
+'a'           printInverse('a'[1:])             'a'       ↑
+''             
+'''
+
 
 
 
